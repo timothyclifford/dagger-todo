@@ -15,6 +15,9 @@ env:
 jobs:
   dagger:
     runs-on: ubuntu-latest
+    env:
+      DAGGER_CACHE_FROM: type=gha,scope=dagger-cache-example
+      DAGGER_CACHE_TO: type=gha,mode=max,scope=dagger-cache-example
     steps:
       - name: Clone repository
         uses: actions/checkout@v2
